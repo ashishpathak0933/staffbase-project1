@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styling2.css">
+</head>
+
+<body>
+
+    <header class="hero">
+        <div id="navbar" class="navbar top">
+            <h1 class="logo" onclick="refresh()">
+                <span class="text-primary"><i class="fas fa-book-open"></i> Staffbase</span>QandA
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#cases">Cases</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <br>
+
+        <div class="card" id="par">
+            <div class="container">
+                <h1>
+                    <p>Architect & Engineer</p>
+                </h1>
+            </div>
+        </div>
+        
+            <input type="button" class="Addbutton" value="Add to ask">
+        
+</body>
+<script>
+
+    var already = []
+
+    function refresh() {
+
+        var values = [],
+            keys = Object.keys(localStorage),
+            i = keys.length;
+
+        while (i--) {
+            if (!already.includes(keys[i])) {
+                addQuestions(localStorage.getItem(keys[i]));
+                already.push(keys[i])
+            }
+        }
+
+
+    }
+
+
+    function addQuestions(text) {
+        var parent = document.getElementById('par')
+        var newQ = document.createElement("div")
+        newQ.setAttribute('name', 'card')
+
+        var container = document.createElement('div')
+        container.setAttribute('name', 'container')
+
+        var h1 = document.createElement('h1')
+        var p = document.createElement('p')
+        p.innerHTML = text;
+
+        h1.appendChild(p)
+        container.appendChild(h1)
+        newQ.appendChild(container);
+        parent.appendChild(newQ);
+    }
+
+</script>
+
+</html>

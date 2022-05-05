@@ -1,0 +1,54 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: lightgray;
+    color: black;
+}
+
+.navbar a {
+    color: black;
+    padding: 10px 20px;
+    margin: 0 5px;
+}
+
+.navbar a:hover {
+    border-bottom: #28a745 2px solid;
+}
+
+ul {
+    list-style: none;
+}
+
+.navbar ul {
+    display: flex;
+
+}
+
+.Addbutton {
+    background-color: rgba(11, 206, 11, 0.826);
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    border-radius: 8px;
+    width: 200px;
+    height: 40px;
+}
+
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+
+}
+
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.container {
+    padding: 2px 16px;
+}
